@@ -6,3 +6,4 @@ NVIDIAなのでCUDAが利用可能なので、外出先でもGPUプログラミ�
 
 - [00_setup.md](00_setup.md) 電源を入れてSSHで接続できるようになるところまで
 - [01_inference.md](01_inference.md) jetson-inference を試す
+- [02_visionworks.md](02_visionworks.md) VisionWorks で動画から物体追跡を試す
