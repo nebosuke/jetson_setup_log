@@ -5,3 +5,4 @@ NVIDIAが開発している、GPUがのっかったエッジコンピューテ�
 NVIDIAなのでCUDAが利用可能なので、外出先でもGPUプログラミングができる夢のマシン。
 
 - [00_setup.md](00_setup.md) 電源を入れてSSHで接続できるようになるところまで
+- [01_inference.md](01_inference.md) jetson-inference を試す

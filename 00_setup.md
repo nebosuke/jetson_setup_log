@@ -86,3 +86,52 @@ Jetson Nano のデフォルトの動作モードは、5Wモードで動作して
 $ sudo nvpmodel -m 0
 $ sudo jetson_clocks
 ```
+
+## リモートでXに接続する
+```
+$ sudo apt-get install xrdp xtightvncviewer x11vnc xfce4
+```
+
+VNC接続にパスワードを設定する。
+
+```
+$ x11vnc -storepasswd
+```
+
+システム起動時にVNCが自動的に起動するように設定する。
+
+```
+$ cd ~/.config
+$ mkdir autostart
+$ cd autostart
+$ vi x11vnc.desktop
+```
+
+```~/.config/autostart/x11vnc.desktop```
+```
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=X11VNC
+Comment=
+Exec=x11vnc -forever -usepw -display :0
+StartupNotify=false
+Terminal=false
+Hidden=false
+```
+
+```
+$ echo xfce4-session > ~/.xsession
+```
+
+```
+$ sudo vim /etc/xrdp/startwm.sh
+```
+
+```/etc/xrdp/startwm.sh``` の最後の行をコメントアウトして、代わりに startxfce4 を起動する。
+```
+# exec /bin/sh /etc/X11/Xsession
+startxfce4
+```
+
+リブート後 RDP クライアントから接続する。
