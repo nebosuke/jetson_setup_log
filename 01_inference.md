@@ -11,7 +11,7 @@ $ cd build
 $ cmake ..
 ```
 
-インストール時にダウンロードする学習済みモデルの選択画面が開くので、特に選択を変更せずに試しにダウンロードする。
+インストール時にダウンロードする学習済みモデルの選択画面が開くので、ResNet50を追加してダウンロードする。
 
 ![Model Downloader](images/jetson-inference-downloader.png)
 
