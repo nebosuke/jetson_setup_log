@@ -47,7 +47,7 @@ $ gcc -o test-launch test-launch.c `pkg-config --cflags --libs gstreamer-rtsp-se
 
 
 ```
-$ ./test-launch "nvarguscamerasrc ! video/x-raw(memory:NVMM), width=1280, height=720, format=(string)NV12, framerate=(fraction)30/1 ! nvvidconv flip-method=2 ! omxh265enc ! rtph265pay name=pay0 pt=96
+$ ./test-launch "nvarguscamerasrc ! video/x-raw(memory:NVMM), width=1280, height=720, format=(string)NV12, framerate=(fraction)30/1 ! nvvidconv flip-method=2 ! omxh265enc ! rtph265pay name=pay0 pt=96"
 ```
 
 VLC で　```rtsp://jetson.local:8554/test``` に接続するとストリーム配信を受信できる。
