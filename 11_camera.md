@@ -19,7 +19,7 @@ ACアダプタを外す。
 
 コネクタはちょっと強く引っ張るとすぐに壊れる。**慎重に**。
 
-![Etcher](images/11_camera_connector.jpeg)
+![connector](images/11_camera_connector.jpeg)
 
 カメラを接続して Jetson Nano を起動すると、特にドライバ等のセットアップも必要なく ```/dev/video0``` というデバイスが出現する。
 
@@ -31,3 +31,27 @@ ACアダプタを外す。
 $ ls -l /dev/video0
 crw-rw----+ 1 root video 81, 0 Oct 24 16:38 /dev/video0
 ```
+
+```
+$ sudo apt install libgstrtspserver-1.0-dev
+```
+
+おなじみ test-launch.c をダウンロードしてコンパイルする
+
+[https://github.com/GStreamer/gst-rtsp-server/blob/master/examples/test-launch.c](https://github.com/GStreamer/gst-rtsp-server/blob/master/examples/test-launch.c)
+
+```
+$ wget https://raw.githubusercontent.com/GStreamer/gst-rtsp-server/master/examples/test-launch.c
+$ gcc -o test-launch test-launch.c `pkg-config --cflags --libs gstreamer-rtsp-server-1.0`
+```
+
+
+```
+$ ./test-launch "nvarguscamerasrc ! video/x-raw(memory:NVMM), width=1280, height=720, format=(string)NV12, framerate=(fraction)30/1 ! nvvidconv flip-method=2 ! omxh265enc ! rtph265pay name=pay0 pt=96
+```
+
+VLC で　```rtsp://jetson.local:8554/test``` に接続するとストリーム配信を受信できる。
+
+![vlc](images/11_camera_vlc.png)
+
+ラズパイのカメラは上下が反転しているので、```nvvidconv flip-method=2``` を挟んでいる。

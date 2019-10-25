@@ -15,3 +15,6 @@ NVIDIAなのでCUDAが利用可能なので、外出先でもGPUプログラミ�
 - [11_camera.md](11_camera.md) カメラをつかって画像をキャプチャする
 - カメラでキャプチャした画像から画像認識モデルをつかって何が写っているのかを判定する
 - カメラでキャプチャした画像に何人の人が含まれているのかを判定する
+
+JetCardからやり直しだけれども、これも試してみたい。
+https://www.space-i.com/post-blog/jetson-nanoでdeepstream-sdk%E3%80%80usbカメラ映像から検知＆iphoneでストリーム/
