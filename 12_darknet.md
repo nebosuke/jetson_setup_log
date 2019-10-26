@@ -49,3 +49,7 @@ $ make
 ```
 ./darknet detector demo cfg/coco.data cfg/yolov3-tiny.cfg yolov3-tiny.weights "'nvarguscamerasrc ! video/x-raw(memory:NVMM), width=1280, height=720, format=(string)NV12, framerate=(fraction)30/1 ! nvtee ! nvvidconv flip-method=2 ! video/x-raw, width=(int)1280, height=(int)720, format=(string)BGRx ! videoconvert ! appsink'"
 ```
+
+## 自前の画像で学習する
+
+https://qiita.com/harmegiddo/items/c3db5fd567fa4c6cc9fb
