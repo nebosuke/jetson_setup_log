@@ -20,3 +20,5 @@ NVIDIAなのでCUDAが利用可能なので、外出先でもGPUプログラミ�
 
 JetCardからやり直しだけれども、これも試してみたい。
 https://www.space-i.com/post-blog/jetson-nanoでdeepstream-sdk%E3%80%80usbカメラ映像から検知＆iphoneでストリーム/
+
+- [20_install_tensorflow.md](20_install_tensorflow.md) TensorFlowをインストール
