@@ -37,12 +37,12 @@ $ sudo make install
 RDPで繋いだデスクトップ環境で実行する。
 
 ```
-$ cd ~/Documents/jetson-inference/build/aarch64/bin
+$ cd ~/jetson-inference/build/aarch64/bin
 $ eog images/orange_0.jpg
 ```
 
 ```
-$ imagenet_console images/orange_0.jpg images/output_0.jpg
+$ imagenet-console images/orange_0.jpg images/output_0.jpg
 ```
 
 ![imagenet-console](images/jetson-inference-imagenet.png)
